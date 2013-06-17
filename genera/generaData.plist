@@ -1,0 +1,134 @@
+{
+	versionID = "1.1";
+	templateList = (
+		{
+			templateName = animal;
+			tabletTemplate = "template-ipad.html";
+			mobileTabs = (
+				{
+					tabName = images;
+				},
+				{
+					tabName = details;
+					tabLabel = Details;
+					tabIcon = "";
+					tabTemplate = "template-iphone-details.html";
+				},
+				{
+					tabName = distribution;
+					tabLabel = Distribution;
+					tabIcon = "tabBar2_distribution.png";
+					tabTemplate = "template-iphone-distribution.html";
+				},
+				{
+					tabName = scarcity;
+					tabLabel = Scarcity;
+					tabIcon = "tabBar2_scarcity.png";
+					tabTemplate = "template-iphone-scarcity.html";
+				},
+			);
+		}
+	);
+	groupList = (
+		{
+			highlightedImage = "active_birds.png";
+			standardImage = "birds.png";
+			label = "Birds";
+			order = "1";
+		},
+		{
+			highlightedImage = "active_lizards.png";
+			standardImage = "lizards.png";
+			label = "Frogs and Reptiles";
+			order = "2";
+		}
+	);
+	objectData = (
+		{
+			identifier = "1234";
+			label = "Southern Bell Frog";
+			labelStyle = "bold";
+			sublabel = "Litoria raniformis";
+			sublabelStyle = "italic";
+			searchText = "Southern Bell Frog Growling Grass Warty Bell Litoria raniformis";
+			group = "Frogs and Reptiles";
+			subgroup = "Tree frogs";
+			template = "animal";
+			squareThumbnail = "frogsquare.jpg";
+			images = (
+				{
+					credit="Simon Sherrin / Museum Victoria";
+					filename="growlgrass1.jpg";
+					imageDescription="<em>Litoria raniformis</em>.";
+				}
+			);
+			details = {
+				identifyingCharacteristics = "Body bright green with golden coloured patches on the back, and a pale stripe along the middle of the back. Back covered in wart lumps. Groin and legs with purple-pink patches. Up to 11 cm long.";
+				bite = "";
+				biology = "Southern Bell Frogs produce a secretion through glands in the skin which can have a toxic effect on other animals, and can cause skin irritation in humans. Females can be 4 cm larger than the males.";
+				diet = "Insects";
+				habitat = "Near water in woodland and shrubland areas.";
+				nativeStatus = "Native to Australia";
+				distinctive = "Calling sound.";
+				distribution = "Tasmania and throughout Victoria.";
+				DSE = "Threatened";
+				EPBC = "Endangered";
+				IUCN = "Vulnerable";
+				depth = "Shore (0-1 m);;Shallow (1-30 m)";
+				location = "On or near sea floor";
+				isCommercial = "";
+				phylum = "Chordata";
+				class = "Amphibia";
+				order = "Anura";
+				family = "Hylidae";
+				genus = "Litoria";
+				species = "raniformis";
+				commonName = "Southern Bell Frog";
+				otherNames = "Growling Grass Frog, Warty Bell Frog";
+			};
+		},
+		{
+			identifier = "5678";
+			label = "Wandering Albatross";
+			labelStyle = "bold";
+			sublabel = "Diomedea exulans";
+			sublabelStyle = "italic";
+			searchText = "birds albatrosses wandering albatross diomedea exulans";
+			group = "Birds";
+			subgroup = "Albatrosses";
+			template = "animal";
+			squareThumbnail = "kookasquare.jpg";
+			images = (
+				{
+					credit="Simon Sherrin / Museum Victoria";
+					filename="kooka.jpg";
+					imageDescription="<em>Litoria raniformis</em>.";
+				}
+			);
+			details = {
+				identifyingCharacteristics = "Body mainly white. Wings white on leading edge and centre, tips and trailing edge black. Underwing mainly white, tips and trailing edge black. Bill pink. Young birds: body and upperwing uniform brown, face white. Body up to 1.4 m long, wing span to 3.5 m.";
+				bite = "";
+				biology = "The wingspan of these albatrosses is the widest of all ocean birds. Individuals breed on sub-Antarctic islands, mainly in the Indian Ocean and New Zealand waters.";
+				diet = "Carnivore";
+				habitat = "Coastlines, large bays and open seas.";
+				nativeStatus = "Recorded in Australia";
+				distinctive = "Wide wingspan, white body, pink bill, white underwing with black tips and trailing edge.";
+				distribution = "Southern continents. Southern Australia, including across Victoria.";
+				DSE = "Endangered";
+				EPBC = "Vulnerable";
+				IUCN = "Vulnerable";
+				depth = "Shore (0-1 m)";
+				location = "Above surface";
+				isCommercial = "";
+				phylum = "Chordata";
+				class = "Aves";
+				order = "Procellariiformes";
+				family = "Diomedeidae";
+				genus = "Diomedea";
+				species = "exulans";
+				commonName = "Wandering Albatross";
+				otherNames = "";
+			};
+		}
+	);
+}

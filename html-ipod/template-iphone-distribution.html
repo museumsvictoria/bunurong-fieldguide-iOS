@@ -1,0 +1,107 @@
+<!doctype html>
+<head>
+<link href="style-iphone.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+	
+	<div class="widget" id="locations">
+        <div class="front">
+            <h3>Commonly Seen<!-- <span class="infobutton" onClick="toggleFlip('locations')"></span> --></h3>
+            <div class="locationImage">
+                <div class="location_position visible"><img src="SpeciesLocation_Background.png" width="280px" alt="location background" /></div>
+                <div id="location_abovesurface" class="location_position invisible"><img src="SpeciesLocation_Abovesurface.png" width="280px" alt="location Above surface" /></div>
+                <div id="location_surface" class="location_position invisible"><img src="SpeciesLocation_Surface.png" width="280px" alt="location surface" /></div>
+                <div id="location_midwater" class="location_position invisible"><img src="SpeciesLocation_Midwater.png" width="280px" alt="location mid water" /></div>
+                <div id="location_onornearseafloor" class="location_position invisible"><img src="SpeciesLocation_Onornearseafloor.png" width="280px" alt="location on or near sea floor" /></div>
+            </div>
+        </div>
+        <!--
+        <div class="back">
+            <h3>About <span class="light">Commonly Seen</span><span onClick="toggleFlip('locations')" class="button">Done</span></h3>
+            <div class="locationImage">
+                <div class="location_position visible"><img src="SpeciesLocation_Background.png" alt="location background" /></div>
+            </div>
+            <div class="overlay">
+                <p>This map is based on specimens held in Australia&#8217;s museums. Museums do not collect from all possible locations so these maps may underestimate the actual range of the species. The collections also include historical records, so the map may show localities where a species was once found but is no longer. Interpret this map as &#8216;the species is found within the green highlighted areas where suitable habitat occurs&#8217;.</p>
+            </div>
+        </div>
+        -->
+    </div>
+    
+    <div class="widget" id="depths">
+        <div class="front">
+            <h3>Depth<!-- <span class="infobutton" onClick="toggleFlip('depths')"></span> --></h3>
+            <!--
+            <div class="depthWrapper">
+                <div id="depthDeep"></div>
+                <div id="depthShallow"></div>
+                <div id="depthShore"></div>
+            </div>
+             -->
+            <div class="depthWrapperOut"><div class="depthWrapper">
+                <div id="depthDeep"><img src="depthDeep_01@2x.png" width="77px" alt="depth deep" /></div>
+                <div id="depthShallow"><img src="depthShallow_01@2x.png" width="77px" alt="depth shallow" /></div>
+                <div id="depthShore"><img src="depthShore_01@2x.png" width="77px" alt="depth shore" /></div>
+            </div></div>
+        </div>
+        <!--
+        <div class="back">
+            <h3>About <span class="light">Depth</span><span onClick="toggleFlip('depths')" class="button">Done</span></h3>
+            <div class="overlay">
+                <p>Depth values indicate possible depth ranges of species habitat, based on Museum Victoria collection data or knowledge of local experts. Shore category is from the intertidal zone to depth of about 1 m. Shallow category is a range between depths of about 1 and 30 m. Deep category is to depths greater than 30 m..</p>
+            </div>
+        </div>
+        -->
+    </div>
+
+    <script>
+        function toggleVisibility(objectid) {
+            currentobj = document.getElementById(objectid);
+            if (currentobj.className.indexOf("invisible") != -1) {
+                currentobj.className = currentobj.className.replace( "invisible", "");
+            } else {
+                currentobj.className += "invisible";
+            }
+        }
+        
+//        var depthFull = "<%depth%>";
+//        function loadDepth() {
+//            var depthList = depthFull.split(";;");
+//            for(var i=0; i<depthList.length; i++) {
+//                var depth = (depthList[i].split(" "))[0];
+//                document.getElementById("depth"+depth).className = "highlighted";
+//            }
+//        }
+        function loadDepth() {
+        var dd = "<%depth%>";
+        var depthList = dd.split(";;");
+        for(var i=0; i<depthList.length; i++) {
+            var depth = (depthList[i].split(" "))[0];
+            //toggleVisibility("depth"+depth);
+            //document.getElementById("depth"+depth).className = "highlighted";
+            document.getElementById("depth"+depth).firstChild.src = "depth"+depth+"_02@2x.png";
+        }
+        }
+        
+        var locationFull = "<%location%>";
+        function loadLocation() {
+            var locationList = locationFull.split(";;");
+            for(var i=0; i<locationList.length; i++) {
+                var location = locationList[i].replace(/ /g, "").toLowerCase();
+                toggleVisibility("location_"+location);
+            }
+        }
+        
+        function init() {
+            loadDepth();
+            loadLocation();
+            setCommercial();
+        }
+        
+        init();
+        
+        </script>
+
+	
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<head>
+	<link rel="stylesheet" type="text/css" href="pagestyles.css" title="ipadstyles">
+    <link rel="alternate stylesheet" type="text/css" href="pagestyles-iphone.css" title="iphonestyles" />
+    <script>
+        
+        function init() {
+            var ua = navigator.userAgent;
+            var isiPad = /iPad/i.test(ua) || /iPhone OS 3_1_2/i.test(ua) || /iPhone OS 3_2_2/i.test(ua);
+            
+            var iPadDevice = document.getElementById("iPadDevice");
+            var iPhoneDevice = document.getElementById("iPhoneDevice");
+            if (!isiPad) {
+                
+                var wrapper = document.getElementById("wrapper");
+                wrapper.className = "iphone";
+
+                var body = document.getElementById("body");
+                body.className = "iphone";
+                
+                iPadDevice.className = " invisible";
+                iPhoneDevice.className = "heading-iphone";
+                
+//                setActiveStyleSheet("iphonestyles");
+                
+            } else {
+                iPadDevice.className = "heading1";
+                iPhoneDevice.className = "invisible";
+            }
+        }
+        function setActiveStyleSheet(title) {
+            var i, a, main;
+            for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+                if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title")) {
+                    a.disabled = true;
+                    if(a.getAttribute("title") == title) a.disabled = false;
+                }
+            }
+        }
+        function getActiveStyleSheet() {
+            var i, a;
+            for(i=0; (a = document.getElementsByTagName("link")[i]); i++) {
+                if(a.getAttribute("rel").indexOf("style") != -1 && a.getAttribute("title") && !a.disabled) return a.getAttribute("title");
+            }
+            return null;
+        }
+    </script>
+        
+</head>
+<body id="body">
+    <div id="wrapper">
+    
+	<h1>
+		<!-- Begin title changes -->
+		<!-- <img src="heading_activities.png" alt="About the Bunurong Marine National Park" /> -->
+        <!-- 
+         <div id="heading111" class="heading1">Park Activities And</div>
+         <div id="heading211" class="heading2">Information</div>
+        -->
+        <div id="iPadDevice" class="heading1">Park Activities And <br /> Information</div>
+        <div id="iPhoneDevice" class="heading-iphone">Park Activities <br /> And Information</div>
+        
+		<!-- End title changes -->
+	</h1>
+	
+    
+    <section>
+        <h2>Park Information</h2>
+        <p>Located in South Gippsland, Victoria, Australia, the Bunurong Marine National Park extends along six kilometres of coastline and covers an area of around 2,100 hectares. This coastline is visually striking, with prominent sandstone headlands, weathered cliffs, beautiful rock formations, wide rock platforms and sheltered sandy coves.</p>
+        <p>The cool coastal waters of this park are home to a range of marine habitats including intertidal rock platforms and pools, subtidal rocky reefs covered in a rich diversity of seaweeds, seagrass meadows and wide sandy plains. This coast is relatively protected from southwesterly swells due to the location of far away King Island in Bass Strait.</p>
+        <p>The marine life of the region is particularly rich. The intertidal rock platforms and adjacent reefs boast the highest recorded diversity of marine invertebrates in eastern Victoria. Over 50 fish species have been recorded in the park, many forming large schools. The range of marine plants is impressive and includes carpets of green seaweeds, kelps and other brown seaweeds, primitive blue-green algae, and mixed turfs of red and green seaweeds. In areas of high wave action and in deeper waters, encrusting coralline red algae are abundant. If you are lucky you may see albatrosses, Humpback Whales, Southern Right Whales, Australian Fur Seals or Subantarctic Fur Seals off this coast.</p>
+    </section>
+    
+	<section>
+		<h2>Activities</h2>
+		<p>Due to the park's rich marine life and easy access to the rock platform and beaches, rock pooling and beachcombing are popular activities.</p>
+		<p>Guided rock pool walks are run each summer by Bunurong Environment Centre and Parks Victoria staff as part of the Coastcare <em>Summer by the Sea</em> summer holiday program. Contact the Bunurong Environment Centre or Parks Victoria for more information.</p>
+		<p>Diving and snorkeling are also rewarding activities as there is a wide mix of habitats and you can see a rich array of marine life within a single dive.</p>
+		<p>The park can also be explored by boat using launching facilities in nearby Cape Paterson. Kayaking, sailing and windsurfing are other ways to enjoy the park.</p>
+		<p><strong>SAFETY NOTE:</strong> As with all seaside activities, safety is crucial and sea conditions should always be monitored. Tides, ocean swell and potential currents must be considered in planning any marine activity. <strong>Remember:</strong> Never turn your back on the sea.</p>
+	</section>
+    
+	<section>
+		<h2>Access</h2>
+		<p>This park is easily accessible by land at the following sites: The Oaks, Twin Reefs, Shack Bay and Eagles Nest. The park can also be accessed by boat via a beach launching ramp at Cape Paterson (subject to safe sea conditions).</p>
+	</section>
+    
+	<section>
+		<h2>Aboriginal Traditional Owners</h2>
+		<p>Parks Victoria and Museum Victoria acknowledge the Aboriginal Traditional Owners of Victoria. Through their cultural traditions, Aboriginal people maintain their connection to their ancestral lands and waters. Indigenous tradition indicates that this park is part of the Country of the Boon Wurrung Indigenous people, who are traditionally and culturally associated with the region. Several groups assert traditional ownership of the area.</p>
+	</section>
+    
+    </div>
+</body>
+<script>
+    init()
+</script>
+</html>

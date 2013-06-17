@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bunurong MNP Gallery</title>
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<link href="gallerystyles.css" type="text/css" rel="stylesheet" />
+	
+	<link href="photoswipe.css" type="text/css" rel="stylesheet" />
+	
+	<script type="text/javascript" src="klass.min.js"></script>
+	<script type="text/javascript" src="code.photoswipe-3.0.5.min.js"></script>
+	
+	
+	<script type="text/javascript">
+
+		(function(window, PhotoSwipe){
+         
+			document.addEventListener('DOMContentLoaded', function(){
+				var options = {enableMouseWheel: false ,
+                                      enableKeyboard: false,
+                                      captionAndToolbarAutoHideDelay: 0,
+                                      captionAndToolbarFlipPosition: true,
+                                      getToolbar: function(){
+                                      return '<div class="ps-toolbar-close" style="padding-top: 12px;">Close</div><div class="ps-toolbar-play" style="padding-top: 12px;">Slideshow</div><div class="ps-toolbar-previous" style="padding-top: 12px;">Previous</div><div class="ps-toolbar-next" style="padding-top: 12px;">Next</div>';
+                                      },
+                                      getImageCaption: function(el){
+                                      
+                                      var captionText, captionEl, captionCredit;
+                                      
+                                      // Get the caption from the alt tag
+                                      if (el.nodeName === "IMG"){
+                                        captionText = el.getAttribute('alt');
+                                      }
+                                      var i, j, childEl;
+                                      for (i=0, j=el.childNodes.length; i<j; i++){
+                                        childEl = el.childNodes[i];
+                                        if (el.childNodes[i].nodeName === 'IMG'){
+                                            captionText = childEl.getAttribute('alt');
+                                        }
+                                      }
+                                      
+                                      captionTextCredit = captionText.split(" Photo by ");
+                                      
+                                      // Return a DOM element with custom styling
+                                      
+                                      //captionText += ".";
+                                      captionText = captionTextCredit[0] + ".";
+                                      
+                                      captionCredit = document.createElement('div');
+                                      captionCredit.className = 'caption-credit'; 
+                                      captionCredit.appendChild(document.createTextNode('Photo by ' + captionTextCredit[1] + "." ));
+
+                                      
+                                      captionEl = document.createElement('div');
+                                      captionEl.className = 'ps-caption-content';
+                                      captionEl.appendChild(document.createTextNode(captionText));
+                                      captionEl.appendChild(captionCredit);
+                                      return captionEl;
+                                      
+                                      }},
+                    myPhotoSwipe = Code.PhotoSwipe.attach( window.document.querySelectorAll('#Gallery a'), options );
+			}, false);
+			
+			
+		}(window, window.Code.PhotoSwipe));
+	</script>
+	
+</head>
+<body>
+
+<div id="MainContent">
+
+	<ul id="Gallery" class="gallery">
+		<li><a href="map.jpg"><img src="map_sq.jpg" alt="Map of Bunurong Marine National Park Photo by Ajay Ranipeta from OpenStreetMap" /></a></li>
+	</ul>
+	
+</div>	
+
+</body>
+</html>
