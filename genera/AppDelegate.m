@@ -287,7 +287,7 @@
 	NSArray *tabBarVCArray = [NSArray arrayWithObjects:homeNavController,groupNavigationController,aToZNavController,searchNavController,aboutVC, nil];
 	tabBarController.viewControllers = tabBarVCArray;
 	NSLog(@"In Tab View Controller");
-	[_window addSubview:tabBarController.view];	
+	[_window setRootViewController:tabBarController];	
 	[aboutVC release];
 	[customSearchViewController release];
 	[searchNavController release];
